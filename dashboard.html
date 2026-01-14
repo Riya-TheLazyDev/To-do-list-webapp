@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - HealDocs</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+const loggedInUser = localStorage.getItem('loggedInUser');
+if (!loggedInUser) {
+    window.location.href = 'login.html';
+}
+</script>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2 sidebar">
+      <h4 class="mb-4 text-primary">HealDocs</h4>
+      <ul>
+        <li onclick="location.href='index.html'">Active</li>
+        <li onclick="location.href='completed.html'">Completed</li>
+        <li onclick="location.href='missed.html'">Missed</li>
+        <li onclick="location.href='teams.html'">Teams</li>
+        <li class="active">Dashboard</li>
+        <li onclick="location.href='notification.html'">Notifications</li>
+      </ul>
+    </div>
+    <div class="col-10 p-4">
+      <h4>Task Analytics</h4>
+      <div style="max-width:500px; margin:auto;">
+        <canvas id="taskChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+const completed = tasks.filter(t => t.status==='completed').length;
+const missed = tasks.filter(t => t.status==='missed').length;
+const active = tasks.filter(t => t.status==='active').length;
+
+const ctx = document.getElementById('taskChart').getContext('2d');
+new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ['Active', 'Completed', 'Missed'],
+    datasets: [{
+      data: [active, completed, missed],
+      backgroundColor: ['#a3d5ff','#b9fbc0','#ffc1e3']
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'bottom' },
+      title: {
+        display: true,
+        text: 'Task Status Distribution'
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>

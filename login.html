@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - HealDocs</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+  background: #f8faff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.login-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 350px;
+}
+.login-container h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: #ff6f61;
+  margin-bottom: 20px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="login-container">
+  <h3>Login</h3>
+  <div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <input type="text" id="username" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" id="password" class="form-control">
+  </div>
+  <button id="loginBtn" class="btn btn-primary w-100">Login</button>
+  <p class="mt-3 text-center">Don't have an account? <a href="signup.html">Sign Up</a></p>
+</div>
+
+<script>
+document.getElementById('loginBtn').onclick = () => {
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value.trim();
+  let users = JSON.parse(localStorage.getItem('users')) || [];
+
+  const user = users.find(u => u.username === username && u.password === password);
+  if(user){
+    localStorage.setItem('loggedInUser', username);
+    window.location.href = 'index.html';
+  } else {
+    alert('Invalid username or password');
+  }
+};
+</script>
+</body>
+</html>

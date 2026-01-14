@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Missed Tasks</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <script>
+const loggedInUser = localStorage.getItem('loggedInUser');
+if (!loggedInUser) {
+    window.location.href = 'login.html';
+}
+</script>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-2 sidebar">
+      <h4 class="mb-4 text-primary">HealDocs</h4>
+      <ul>
+        <li onclick="location.href='index.html'">Active</li>
+        <li onclick="location.href='completed.html'">Completed</li>
+        <li class="active">Missed</li>
+        <li onclick="location.href='teams.html'">Teams</li>
+        <li onclick="location.href='dashboard.html'">Dashboard</li>
+        <li onclick="location.href='notification.html'">Notifications</li>
+      </ul>
+    </div>
+
+    <!-- Main content -->
+    <div class="col-10 p-4">
+      <h4>Missed Tasks</h4>
+      <div class="row mt-4 g-3" id="missed-container"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Get missed container
+const missedContainer = document.getElementById('missed-container');
+let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+// Render missed tasks as cards
+function renderMissed() {
+  missedContainer.innerHTML = '';
+
+  tasks.filter(task => task.status === 'missed')
+       .forEach(task => {
+    const col = document.createElement('div');
+    col.classList.add('col-md-6', 'col-lg-4');
+
+    const card = document.createElement('div');
+    card.classList.add('task-card', 'bg-pink'); // pastel pink for missed
+    card.innerHTML = `
+      <h6>${task.title}</h6>
+      <p>${task.desc}</p>
+      <small>${task.time}</small>
+      <div class="task-actions">
+        <button onclick="toggleComplete('${task.id}')" class="btn-complete">Complete</button>
+        <button onclick="deleteTask('${task.id}')" class="btn-delete">Delete</button>
+      </div>
+    `;
+
+    col.appendChild(card);
+    missedContainer.appendChild(col);
+  });
+
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+// Delete task
+function deleteTask(id) {
+  tasks = tasks.filter(t => t.id !== id);
+  renderMissed();
+}
+
+// Toggle complete
+function toggleComplete(id) {
+  const task = tasks.find(t => t.id === id);
+  if (task) {
+    task.status = 'completed';
+    renderMissed();
+  }
+}
+
+renderMissed();
+</script>
+</body>
+</html>
