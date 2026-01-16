@@ -99,10 +99,10 @@ body {
 }
 
 /* Task Card Colors */
-.bg-blue { background-color: #e3f2fd; }
-.bg-purple { background-color: #f3e5f5; }
+.bg-white { background-color: #e3f2fd; }
+.bg-aquamarine { background-color: #6fead1; }
 .bg-yellow { background-color: #fff3cd; }
-.bg-pink { background-color: #f8bbd0; }
+.bg-pink { background-color: #f6f5f5; }
 .bg-green { background-color: #c8e6c9; }
 
 .company-title {
@@ -110,4 +110,120 @@ body {
   color: #0a142c; 
   font-weight: 700;
   text-shadow: 1px 1px 2px #171a4e; 
+}
+body {
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+
+  /* Mirror Morphism Gradient Background */
+  background: radial-gradient(circle at top left, rgba(0, 255, 255, 0.35), transparent 55%),
+              radial-gradient(circle at bottom right, rgba(255, 0, 255, 0.35), transparent 60%),
+              linear-gradient(120deg, rgba(10, 10, 30, 1), rgba(30, 10, 60, 1), rgba(10, 40, 60, 1));
+  position: relative;
+}
+
+/* Glass mirror reflection overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.12)
+  );
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* Optional: adds premium noise texture */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: -1;
+}
+/* ===========================
+   Glass Opaque Sidebar + Navbar
+   =========================== */
+
+/* Sidebar Glass */
+.sidebar {
+  background: rgba(255, 255, 255, 0.12) !important; /* opaque glass */
+  border-right: 1px solid rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* Sidebar items glass hover */
+.sidebar ul li {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  transition: 0.25s ease;
+}
+
+.sidebar ul li:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateX(5px);
+  color: #fff;
+}
+
+/* Sidebar active item */
+.sidebar ul li.active {
+  background: rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Topbar / Navbar Glass */
+.topbar {
+  background: rgba(255, 255, 255, 0.12) !important; /* opaque glass */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Search bar glass style */
+.search-bar {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  border-radius: 14px;
+  color: #fff !important;
+}
+
+.search-bar::placeholder {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+.search-bar:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 255, 255, 0.25);
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.25)
+  );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  pointer-events: none;
+  z-index: -1;
 }
