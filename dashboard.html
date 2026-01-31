@@ -273,6 +273,78 @@ new Chart(document.getElementById("taskBarChart"), {
 </script>
 
 </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - HealDocs</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+const loggedInUser = localStorage.getItem('loggedInUser');
+if (!loggedInUser) {
+    window.location.href = 'login.html';
+}
+</script>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2 sidebar">
+      <h4 class="mb-4 text-primary">HealDocs</h4>
+      <ul>
+        <li onclick="location.href='index.html'">Active</li>
+        <li onclick="location.href='completed.html'">Completed</li>
+        <li onclick="location.href='missed.html'">Missed</li>
+        <li onclick="location.href='teams.html'">Teams</li>
+        <li class="active">Dashboard</li>
+        <li onclick="location.href='notification.html'">Notifications</li>
+      </ul>
+    </div>
+    <div class="col-10 p-4">
+      <h4>Task Analytics</h4>
+      <div style="max-width:500px; margin:auto;">
+        <canvas id="taskChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+const completed = tasks.filter(t => t.status==='completed').length;
+const missed = tasks.filter(t => t.status==='missed').length;
+const active = tasks.filter(t => t.status==='active').length;
+
+const ctx = document.getElementById('taskChart').getContext('2d');
+new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ['Active', 'Completed', 'Missed'],
+    datasets: [{
+      data: [active, completed, missed],
+      backgroundColor: ['#a3d5ff','#b9fbc0','#ffc1e3']
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'bottom' },
+      title: {
+        display: true,
+        text: 'Task Status Distribution'
+      }
+    }
+  }
+});
+</script>
+</body>
 </html>-->
 
 <!DOCTYPE html>
@@ -344,5 +416,210 @@ new Chart(ctx, {
   }
 });
 </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - HealDocs</title>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+body{
+  background:#f8f9fa;
+}
+
+.sidebar{
+  background:#ffffff;
+  min-height:100vh;
+  padding:20px;
+  box-shadow:2px 0 10px rgba(0,0,0,0.1);
+}
+
+.sidebar ul{
+  list-style:none;
+  padding:0;
+}
+
+.sidebar li{
+  padding:10px;
+  cursor:pointer;
+  border-radius:6px;
+}
+
+.sidebar li:hover{
+  background:#f1f1f1;
+}
+
+.sidebar .active{
+  background:#0d6efd;
+  color:white;
+}
+
+.card h2{
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+
+<script>
+const loggedInUser = localStorage.getItem("loggedInUser");
+if(!loggedInUser){
+  window.location.href = "login.html";
+}
+</script>
+
+<div class="container-fluid">
+  <div class="row">
+
+ 
+    <div class="col-2 sidebar">
+      <h4 class="mb-4 text-primary">HealDocs</h4>
+      <ul>
+        <li onclick="location.href='index.html'">Active</li>
+        <li onclick="location.href='completed.html'">Completed</li>
+        <li onclick="location.href='missed.html'">Missed</li>
+        <li onclick="location.href='teams.html'">Teams</li>
+        <li class="active">Dashboard</li>
+        <li onclick="location.href='notification.html'">Notifications</li>
+      </ul>
+    </div>
+
+    
+    <div class="col-10 p-4">
+
+      <h4 class="mb-4">Task Analytics</h4>
+
+      
+      <div class="row text-center mb-4">
+
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h6>Active Tasks</h6>
+              <h2 id="activeCount">0</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h6>Completed Tasks</h6>
+              <h2 id="completedCount">0</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h6>Missed Tasks</h6>
+              <h2 id="missedCount">0</h2>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      
+      <div class="row">
+
+        
+        <div class="col-md-6">
+          <div style="height:350px;">
+            <canvas id="taskChart"></canvas>
+          </div>
+        </div>
+
+       
+        <div class="col-md-6">
+          <div style="height:350px;">
+            <canvas id="taskBarChart"></canvas>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+const completed = tasks.filter(t => t.status === "completed").length;
+const missed = tasks.filter(t => t.status === "missed").length;
+const active = tasks.filter(t => t.status === "active").length;
+
+// Show counts
+document.getElementById("activeCount").innerText = active;
+document.getElementById("completedCount").innerText = completed;
+document.getElementById("missedCount").innerText = missed;
+
+// Doughnut Chart
+new Chart(document.getElementById("taskChart"), {
+  type: "doughnut",
+  data: {
+    labels: ["Active", "Completed", "Missed"],
+    datasets: [{
+      data: [active, completed, missed],
+      backgroundColor: ["#a3d5ff", "#b9fbc0", "#ffc1e3"]
+    }]
+  },
+  options: {
+    responsive:true,
+    plugins:{
+      legend:{position:"bottom"},
+      title:{
+        display:true,
+        text:"Task Status Distribution"
+      }
+    }
+  }
+});
+
+// Bar Chart
+new Chart(document.getElementById("taskBarChart"), {
+  type: "bar",
+  data: {
+    labels: ["Active", "Completed", "Missed"],
+    datasets: [{
+      label:"Number of Tasks",
+      data:[active, completed, missed],
+      backgroundColor:["#a3d5ff", "#b9fbc0", "#ffc1e3"]
+    }]
+  },
+  options:{
+    responsive:true,
+    plugins:{
+      legend:{display:false},
+      title:{
+        display:true,
+        text:"Task Count Overview"
+      }
+    },
+    scales:{
+      y:{
+        beginAtZero:true,
+        ticks:{stepSize:1}
+      }
+    }
+  }
+});
+</script>
+
 </body>
 </html>
