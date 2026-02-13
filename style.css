@@ -458,6 +458,1387 @@ body::after {
   100% { transform: translateX(100%); }
 }*/
 
+/*body {
+  background-color: #f8faff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.sidebar {
+  height: 100vh;
+  background: #fff;
+  border-right: 1px solid #eee;
+  padding: 20px;
+}
+
+.sidebar h4 {
+  font-weight: 700;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+  color: #333;
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+
+.sidebar ul li.active {
+  background: #eef4ff;
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+.topbar {
+  background: #fff;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-bar {
+  max-width: 250px;
+}
+
+.task-card {
+  border-radius: 15px;
+  padding: 20px;
+  color: #333;
+  min-height: 120px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.task-card h6 {
+  font-weight: 600;
+}
+
+.task-card small {
+  font-size: 13px;
+  color: #555;
+}
+
+.task-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.task-actions .btn-complete {
+  background-color: #02fa40; /* pastel green 
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  min-width: 90px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.task-actions .btn-delete {
+  background-color: #ff0217; /* pastel red *
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  min-width: 70px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+/* Task Card Colors *
+.bg-white { background-color: #e3f2fd; }
+.bg-aquamarine { background-color: #6fead1; }
+.bg-yellow { background-color: #fff3cd; }
+.bg-pink { background-color: #f6f5f5; }
+.bg-green { background-color: #c8e6c9; }
+
+.company-title {
+  font-family: 'Montserrat', sans-serif;
+  color: #0a142c; 
+  font-weight: 700;
+  text-shadow: 1px 1px 2px #171a4e; 
+}
+body {
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+
+  /* Mirror Morphism Gradient Background *
+  background: radial-gradient(circle at top left, rgba(0, 255, 255, 0.35), transparent 55%),
+              radial-gradient(circle at bottom right, rgba(255, 0, 255, 0.35), transparent 60%),
+              linear-gradient(120deg, rgba(10, 10, 30, 1), rgba(30, 10, 60, 1), rgba(10, 40, 60, 1));
+  position: relative;
+}
+
+/* Glass mirror reflection overlay *
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.12)
+  );
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* Optional: adds premium noise texture *
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: -1;
+}
+/* ===========================
+   Glass Opaque Sidebar + Navbar
+   =========================== */
+
+/* Sidebar Glass *
+.sidebar {
+  background: rgba(255, 255, 255, 0.12) !important; /* opaque glass *
+  border-right: 1px solid rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* Sidebar items glass hover *
+.sidebar ul li {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  transition: 0.25s ease;
+}
+
+.sidebar ul li:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateX(5px);
+  color: #fff;
+}
+
+/* Sidebar active item *
+.sidebar ul li.active {
+  background: rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Topbar / Navbar Glass *
+.topbar {
+  background: rgba(255, 255, 255, 0.12) !important; /* opaque glass *
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Search bar glass style *
+.search-bar {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  border-radius: 14px;
+  color: #fff !important;
+}
+
+.search-bar::placeholder {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+.search-bar:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 255, 255, 0.25);
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.25)
+  );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  pointer-events: none;
+  z-index: -1;
+}
+/* =========================================================
+   PREMIUM UI OVERRIDES (Paste at END - no need to delete)
+   Buttons + Cards upgrade (Glass + Gradient + Modern Hover)
+   ========================================================= */
+
+/* ---------- Task Card (Premium Glass Style) ---------- *
+.task-card {
+  border-radius: 22px !important;
+  padding: 22px !important;
+  min-height: 140px !important;
+
+  background: rgba(255, 255, 255, 0.18) !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18) !important;
+  overflow: hidden;
+  position: relative;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+/* Smooth lift hover *
+.task-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.22) !important;
+  background: rgba(255, 255, 255, 0.24) !important;
+}
+
+/* Mirror shine effect on card *
+.task-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 48%,
+    transparent 100%
+  );
+  opacity: 0.14;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* optional animated shine on hover *
+.task-card:hover::before {
+  animation: shineMove 0.9s ease forwards;
+}
+
+@keyframes shineMove {
+  0% { transform: translateX(-60%); }
+  100% { transform: translateX(60%); }
+}
+
+/* Better text hierarchy inside cards *
+.task-card h6 {
+  font-weight: 800 !important;
+  font-size: 18px !important;
+  margin-bottom: 8px !important;
+  color: #0a142c !important;
+  letter-spacing: 0.2px;
+}
+
+.task-card p,
+.task-card small {
+  color: rgba(10, 20, 44, 0.78) !important;
+  font-size: 14px;
+}
+
+/* Completed Task card style (still readable) *
+.completed {
+  opacity: 0.70 !important;
+  text-decoration: line-through;
+}
+
+/* ---------- Card Backgrounds: make them glassy ---------- *
+.bg-blue   { background: rgba(196, 233, 250, 0.35) !important; }
+.bg-purple { background: rgba(210, 200, 255, 0.28) !important; }
+.bg-yellow { background: rgba(255, 240, 200, 0.35) !important; }
+.bg-pink   { background: rgba(255, 200, 220, 0.32) !important; }
+.bg-green  { background: rgba(190, 255, 225, 0.30) !important; }
+
+/* ---------- Task Actions Layout Upgrade ---------- *
+.task-actions {
+  margin-top: 14px !important;
+  display: flex;
+  gap: 12px !important;
+  flex-wrap: wrap;
+}
+
+/* ---------- Premium Buttons for task actions ---------- *
+.task-actions .btn-complete,
+.task-actions .btn-delete {
+  border: none !important;
+  border-radius: 14px !important;
+  padding: 9px 14px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Complete button (Mint glass gradient) *
+.task-actions .btn-complete {
+  background: linear-gradient(135deg, rgba(130, 255, 210, 0.90), rgba(120, 220, 255, 0.85)) !important;
+  color: #062b26 !important;
+}
+
+/* Delete button (Soft red glass gradient) *
+.task-actions .btn-delete {
+  background: linear-gradient(135deg, rgba(255, 95, 120, 0.92), rgba(255, 165, 135, 0.86)) !important;
+  color: #3b0a12 !important;
+}
+
+/* Button Hover *
+.task-actions .btn-complete:hover,
+.task-actions .btn-delete:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.04);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+}
+
+/* Button Active click *
+.task-actions .btn-complete:active,
+.task-actions .btn-delete:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+/* ---------- Main Add Task button Premium ---------- *
+.btn.btn-primary {
+  border-radius: 16px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.3px;
+  padding: 10px 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+
+  background: linear-gradient(135deg, rgba(90, 180, 255, 0.95), rgba(125, 110, 255, 0.95)) !important;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.btn.btn-primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.22);
+}
+
+/* ---------- Improve small top buttons (Active/Completed/Missed) ---------- *
+#active-btn, #completed-btn, #missed-btn {
+  border-radius: 999px !important;
+  padding: 8px 14px !important;
+  font-weight: 800 !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* ==========================================
+   NEW GRADIENT (Blue → Indigo → Purple)
+   Moving animated background
+   Paste at END of style.css
+   ========================================== *
+
+body{
+  min-height: 100vh;
+  margin: 0;
+  color: #fff;
+
+  /* Gradient like your image *
+  background: linear-gradient(
+    120deg,
+    #05202a,   /* blue-teal *
+    #3b1545,   /* indigo *
+    #3b2a66,   /* violet-indigo *
+    #130123    /* purple *
+  ) !important;
+
+  background-size: 350% 350% !important;
+  animation: gradientFlow 12s ease-in-out infinite !important;
+}
+
+/* Smooth infinite moving gradient *
+@keyframes gradientFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+
+  background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.18), transparent 55%),
+              radial-gradient(circle at 80% 70%, rgba(255,255,255,0.12), transparent 60%),
+              linear-gradient(120deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.20) 45%,
+    transparent 100%
+  );
+  opacity: 0.18;
+  transform: translateX(-100%);
+  pointer-events: none;
+  z-index: -1;
+  animation: mirrorShine 7s linear infinite;
+}
+
+@keyframes mirrorShine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}*/
+
+
+
+body {
+  background-color: #f8faff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.sidebar {
+  height: 100vh;
+  background: #fff;
+  border-right: 1px solid #eee;
+  padding: 20px;
+}
+
+.sidebar h4 {
+  font-weight: 700;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+  color: #333;
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+
+.sidebar ul li.active {
+  background: #eef4ff;
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+.topbar {
+  background: #fff;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-bar {
+  max-width: 250px;
+}
+
+.task-card {
+  border-radius: 15px;
+  padding: 20px;
+  color: #333;
+  min-height: 120px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.task-card h6 {
+  font-weight: 600;
+}
+
+.task-card small {
+  font-size: 13px;
+  color: #555;
+}
+
+.task-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.task-actions .btn-complete {
+  background-color: #02fa40; /* pastel green */
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  min-width: 90px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.task-actions .btn-delete {
+  background-color: #ff0217; /* pastel red */
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  min-width: 70px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+/* Task Card Colors */
+.bg-white { background-color: #e3f2fd; }
+.bg-aquamarine { background-color: #6fead1; }
+.bg-yellow { background-color: #fff3cd; }
+.bg-pink { background-color: #f6f5f5; }
+.bg-green { background-color: #c8e6c9; }
+
+.company-title {
+  font-family: 'Montserrat', sans-serif;
+  color: #0a142c; 
+  font-weight: 700;
+  text-shadow: 1px 1px 2px #171a4e; 
+}
+body {
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+
+  /* Mirror Morphism Gradient Background */
+  background: radial-gradient(circle at top left, rgba(0, 255, 255, 0.35), transparent 55%),
+              radial-gradient(circle at bottom right, rgba(255, 0, 255, 0.35), transparent 60%),
+              linear-gradient(120deg, rgba(10, 10, 30, 1), rgba(30, 10, 60, 1), rgba(10, 40, 60, 1));
+  position: relative;
+}
+
+/* Glass mirror reflection overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.12)
+  );
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* Optional: adds premium noise texture */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: -1;
+}
+/* ===========================
+   Glass Opaque Sidebar + Navbar
+   =========================== */
+
+/* Sidebar Glass */
+.sidebar {
+  background: rgba(255, 255, 255, 0.12) !important; /* opaque glass */
+  border-right: 1px solid rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* Sidebar items glass hover */
+.sidebar ul li {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  transition: 0.25s ease;
+}
+
+.sidebar ul li:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateX(5px);
+  color: #fff;
+}
+
+/* Sidebar active item */
+.sidebar ul li.active {
+  background: rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Topbar / Navbar Glass */
+.topbar {
+  background: rgba(255, 255, 255, 0.12) !important; /* opaque glass */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Search bar glass style */
+.search-bar {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  border-radius: 14px;
+  color: #fff !important;
+}
+
+.search-bar::placeholder {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+.search-bar:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 255, 255, 0.25);
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.25)
+  );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  pointer-events: none;
+  z-index: -1;
+}
+/* =========================================================
+   PREMIUM UI OVERRIDES (Paste at END - no need to delete)
+   Buttons + Cards upgrade (Glass + Gradient + Modern Hover)
+   ========================================================= */
+
+/* ---------- Task Card (Premium Glass Style) ---------- */
+.task-card {
+  border-radius: 22px !important;
+  padding: 22px !important;
+  min-height: 140px !important;
+
+  background: rgba(255, 255, 255, 0.18) !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18) !important;
+  overflow: hidden;
+  position: relative;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+/* Smooth lift hover */
+.task-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.22) !important;
+  background: rgba(255, 255, 255, 0.24) !important;
+}
+
+/* Mirror shine effect on card */
+.task-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 48%,
+    transparent 100%
+  );
+  opacity: 0.14;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* optional animated shine on hover */
+.task-card:hover::before {
+  animation: shineMove 0.9s ease forwards;
+}
+
+@keyframes shineMove {
+  0% { transform: translateX(-60%); }
+  100% { transform: translateX(60%); }
+}
+
+/* Better text hierarchy inside cards */
+.task-card h6 {
+  font-weight: 800 !important;
+  font-size: 18px !important;
+  margin-bottom: 8px !important;
+  color: #0a142c !important;
+  letter-spacing: 0.2px;
+}
+
+.task-card p,
+.task-card small {
+  color: rgba(10, 20, 44, 0.78) !important;
+  font-size: 14px;
+}
+
+/* Completed Task card style (still readable) */
+.completed {
+  opacity: 0.70 !important;
+  text-decoration: line-through;
+}
+
+/* ---------- Card Backgrounds: make them glassy ---------- */
+.bg-blue   { background: rgba(196, 233, 250, 0.35) !important; }
+.bg-purple { background: rgba(210, 200, 255, 0.28) !important; }
+.bg-yellow { background: rgba(255, 240, 200, 0.35) !important; }
+.bg-pink   { background: rgba(255, 200, 220, 0.32) !important; }
+.bg-green  { background: rgba(190, 255, 225, 0.30) !important; }
+
+/* ---------- Task Actions Layout Upgrade ---------- */
+.task-actions {
+  margin-top: 14px !important;
+  display: flex;
+  gap: 12px !important;
+  flex-wrap: wrap;
+}
+
+/* ---------- Premium Buttons for task actions ---------- */
+.task-actions .btn-complete,
+.task-actions .btn-delete {
+  border: none !important;
+  border-radius: 14px !important;
+  padding: 9px 14px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Complete button (Mint glass gradient) */
+.task-actions .btn-complete {
+  background: linear-gradient(135deg, rgba(130, 255, 210, 0.90), rgba(120, 220, 255, 0.85)) !important;
+  color: #062b26 !important;
+}
+
+/* Delete button (Soft red glass gradient) */
+.task-actions .btn-delete {
+  background: linear-gradient(135deg, rgba(255, 95, 120, 0.92), rgba(255, 165, 135, 0.86)) !important;
+  color: #3b0a12 !important;
+}
+
+/* Button Hover */
+.task-actions .btn-complete:hover,
+.task-actions .btn-delete:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.04);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+}
+
+/* Button Active click */
+.task-actions .btn-complete:active,
+.task-actions .btn-delete:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+/* ---------- Main Add Task button Premium ---------- */
+.btn.btn-primary {
+  border-radius: 16px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.3px;
+  padding: 10px 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+
+  background: linear-gradient(135deg, rgba(90, 180, 255, 0.95), rgba(125, 110, 255, 0.95)) !important;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.btn.btn-primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.22);
+}
+
+/* ---------- Improve small top buttons (Active/Completed/Missed) ---------- */
+#active-btn, #completed-btn, #missed-btn {
+  border-radius: 999px !important;
+  padding: 8px 14px !important;
+  font-weight: 800 !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* ==========================================
+   NEW GRADIENT (Blue → Indigo → Purple)
+   Moving animated background
+   Paste at END of style.css
+   ========================================== */
+
+body{
+  min-height: 100vh;
+  margin: 0;
+  color: #fff;
+
+  /* Gradient like your image */
+  background: linear-gradient(
+    120deg,
+    #05202a,   /* blue-teal */
+    #3b1545,   /* indigo */
+    #3b2a66,   /* violet-indigo */
+    #130123    /* purple */
+  ) !important;
+
+  background-size: 350% 350% !important;
+  animation: gradientFlow 12s ease-in-out infinite !important;
+}
+
+/* Smooth infinite moving gradient */
+@keyframes gradientFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+
+  background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.18), transparent 55%),
+              radial-gradient(circle at 80% 70%, rgba(255,255,255,0.12), transparent 60%),
+              linear-gradient(120deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.20) 45%,
+    transparent 100%
+  );
+  opacity: 0.18;
+  transform: translateX(-100%);
+  pointer-events: none;
+  z-index: -1;
+  animation: mirrorShine 7s linear infinite;
+}
+
+@keyframes mirrorShine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+/*body {
+  background-color: #f8faff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.sidebar {
+  height: 100vh;
+  background: #fff;
+  border-right: 1px solid #eee;
+  padding: 20px;
+}
+
+.sidebar h4 {
+  font-weight: 700;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+  color: #333;
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+
+.sidebar ul li.active {
+  background: #eef4ff;
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+.topbar {
+  background: #fff;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-bar {
+  max-width: 250px;
+}
+
+.task-card {
+  border-radius: 15px;
+  padding: 20px;
+  color: #333;
+  min-height: 120px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.task-card h6 {
+  font-weight: 600;
+}
+
+.task-card small {
+  font-size: 13px;
+  color: #555;
+}
+
+.task-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.task-actions .btn-complete {
+  background-color: #02fa40; /* pastel green 
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  min-width: 90px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.task-actions .btn-delete {
+  background-color: #ff0217; /* pastel red *
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  min-width: 70px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+/* Task Card Colors *
+.bg-white { background-color: #e3f2fd; }
+.bg-aquamarine { background-color: #6fead1; }
+.bg-yellow { background-color: #fff3cd; }
+.bg-pink { background-color: #f6f5f5; }
+.bg-green { background-color: #c8e6c9; }
+
+.company-title {
+  font-family: 'Montserrat', sans-serif;
+  color: #0a142c; 
+  font-weight: 700;
+  text-shadow: 1px 1px 2px #171a4e; 
+}
+body {
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+
+  /* Mirror Morphism Gradient Background *
+  background: radial-gradient(circle at top left, rgba(0, 255, 255, 0.35), transparent 55%),
+              radial-gradient(circle at bottom right, rgba(255, 0, 255, 0.35), transparent 60%),
+              linear-gradient(120deg, rgba(10, 10, 30, 1), rgba(30, 10, 60, 1), rgba(10, 40, 60, 1));
+  position: relative;
+}
+
+/* Glass mirror reflection overlay *
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.12)
+  );
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* Optional: adds premium noise texture *
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: -1;
+}
+/* ===========================
+   Glass Opaque Sidebar + Navbar
+   =========================== */
+
+/* Sidebar Glass *
+.sidebar {
+  background: rgba(255, 255, 255, 0.12) !important; /* opaque glass *
+  border-right: 1px solid rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* Sidebar items glass hover *
+.sidebar ul li {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  transition: 0.25s ease;
+}
+
+.sidebar ul li:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateX(5px);
+  color: #fff;
+}
+
+/* Sidebar active item *
+.sidebar ul li.active {
+  background: rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Topbar / Navbar Glass *
+.topbar {
+  background: rgba(255, 255, 255, 0.12) !important; /* opaque glass *
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Search bar glass style *
+.search-bar {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  border-radius: 14px;
+  color: #fff !important;
+}
+
+.search-bar::placeholder {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+.search-bar:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 255, 255, 0.25);
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.25)
+  );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  pointer-events: none;
+  z-index: -1;
+}
+/* =========================================================
+   PREMIUM UI OVERRIDES (Paste at END - no need to delete)
+   Buttons + Cards upgrade (Glass + Gradient + Modern Hover)
+   ========================================================= */
+
+/* ---------- Task Card (Premium Glass Style) ---------- *
+.task-card {
+  border-radius: 22px !important;
+  padding: 22px !important;
+  min-height: 140px !important;
+
+  background: rgba(255, 255, 255, 0.18) !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18) !important;
+  overflow: hidden;
+  position: relative;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+/* Smooth lift hover *
+.task-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.22) !important;
+  background: rgba(255, 255, 255, 0.24) !important;
+}
+
+/* Mirror shine effect on card *
+.task-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 48%,
+    transparent 100%
+  );
+  opacity: 0.14;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* optional animated shine on hover *
+.task-card:hover::before {
+  animation: shineMove 0.9s ease forwards;
+}
+
+@keyframes shineMove {
+  0% { transform: translateX(-60%); }
+  100% { transform: translateX(60%); }
+}
+
+/* Better text hierarchy inside cards *
+.task-card h6 {
+  font-weight: 800 !important;
+  font-size: 18px !important;
+  margin-bottom: 8px !important;
+  color: #0a142c !important;
+  letter-spacing: 0.2px;
+}
+
+.task-card p,
+.task-card small {
+  color: rgba(10, 20, 44, 0.78) !important;
+  font-size: 14px;
+}
+
+/* Completed Task card style (still readable) *
+.completed {
+  opacity: 0.70 !important;
+  text-decoration: line-through;
+}
+
+/* ---------- Card Backgrounds: make them glassy ---------- *
+.bg-blue   { background: rgba(196, 233, 250, 0.35) !important; }
+.bg-purple { background: rgba(210, 200, 255, 0.28) !important; }
+.bg-yellow { background: rgba(255, 240, 200, 0.35) !important; }
+.bg-pink   { background: rgba(255, 200, 220, 0.32) !important; }
+.bg-green  { background: rgba(190, 255, 225, 0.30) !important; }
+
+/* ---------- Task Actions Layout Upgrade ---------- *
+.task-actions {
+  margin-top: 14px !important;
+  display: flex;
+  gap: 12px !important;
+  flex-wrap: wrap;
+}
+
+/* ---------- Premium Buttons for task actions ---------- *
+.task-actions .btn-complete,
+.task-actions .btn-delete {
+  border: none !important;
+  border-radius: 14px !important;
+  padding: 9px 14px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Complete button (Mint glass gradient) *
+.task-actions .btn-complete {
+  background: linear-gradient(135deg, rgba(130, 255, 210, 0.90), rgba(120, 220, 255, 0.85)) !important;
+  color: #062b26 !important;
+}
+
+/* Delete button (Soft red glass gradient) *
+.task-actions .btn-delete {
+  background: linear-gradient(135deg, rgba(255, 95, 120, 0.92), rgba(255, 165, 135, 0.86)) !important;
+  color: #3b0a12 !important;
+}
+
+/* Button Hover *
+.task-actions .btn-complete:hover,
+.task-actions .btn-delete:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.04);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+}
+
+/* Button Active click *
+.task-actions .btn-complete:active,
+.task-actions .btn-delete:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+/* ---------- Main Add Task button Premium ---------- *
+.btn.btn-primary {
+  border-radius: 16px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.3px;
+  padding: 10px 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+
+  background: linear-gradient(135deg, rgba(90, 180, 255, 0.95), rgba(125, 110, 255, 0.95)) !important;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.btn.btn-primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.22);
+}
+
+/* ---------- Improve small top buttons (Active/Completed/Missed) ---------- *
+#active-btn, #completed-btn, #missed-btn {
+  border-radius: 999px !important;
+  padding: 8px 14px !important;
+  font-weight: 800 !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* ==========================================
+   NEW GRADIENT (Blue → Indigo → Purple)
+   Moving animated background
+   Paste at END of style.css
+   ========================================== *
+
+body{
+  min-height: 100vh;
+  margin: 0;
+  color: #fff;
+
+  /* Gradient like your image *
+  background: linear-gradient(
+    120deg,
+    #05202a,   /* blue-teal *
+    #3b1545,   /* indigo *
+    #3b2a66,   /* violet-indigo *
+    #130123    /* purple *
+  ) !important;
+
+  background-size: 350% 350% !important;
+  animation: gradientFlow 12s ease-in-out infinite !important;
+}
+
+/* Smooth infinite moving gradient *
+@keyframes gradientFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+
+  background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.18), transparent 55%),
+              radial-gradient(circle at 80% 70%, rgba(255,255,255,0.12), transparent 60%),
+              linear-gradient(120deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.20) 45%,
+    transparent 100%
+  );
+  opacity: 0.18;
+  transform: translateX(-100%);
+  pointer-events: none;
+  z-index: -1;
+  animation: mirrorShine 7s linear infinite;
+}
+
+@keyframes mirrorShine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}*/
+
 
 
 body {
